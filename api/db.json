@@ -1,0 +1,16 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Toto DUPONT",
+      "email": "toto.dupont@email.com",
+      "phone": "061234567890"
+    },
+    {
+      "name": "Tata Dupont",
+      "email": "toto.dupont@email.com",
+      "phone": "061234567891",
+      "id": 2
+    }
+  ]
+}

@@ -1,8 +1,16 @@
+<app-menu></app-menu>
 <h1>Contacts list</h1>
 <h2>New contact</h2>
-<form (ngSubmit)="createContact()">
-  <label>Name :</label><input type="text" name="name" [(ngModel)]="name"/><br/>
-  <label>Email :</label><input type="text" name="email" [(ngModel)]="email"/><br/>
-  <label>Phone :</label><input type="text" name="phone" [(ngModel)]="phone"/><br/>
+
+<form [formGroup]="formGroup" (ngSubmit)="createContact()">
+  <label>Name :</label><input type="text" name="name" formControlName="nameContact" required/><br/>
+  <!-- Do more detailled and better comments to show errors to the user -->
+  <div *ngIf="formGroup.invalid && (formGroup.dirty || formGroup.touched)">
+    <div *ngIf="formGroup.get('nameContact').errors">
+      Name is wrong
+    </div>
+  </div>
+  <label>Email :</label><input type="text" name="email" [(ngModel)]="email" formControlName="email" required/><br/>
+  <label>Phone :</label><input type="text" name="phone" [(ngModel)]="phone" formControlName="phone"/><br/>
   <button type="submit">Add contact</button>
 </form>

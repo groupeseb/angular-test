@@ -17,7 +17,7 @@ export class ContactsListService {
   }
 
   addContact(contact) {
-    return this.http.post('/api/contacts', contact);
+    return this.http.post('/api/contacts', contact).subscribe();
   }
 
 }

@@ -1,4 +1,17 @@
+<app-menu></app-menu>
 <h1>Contacts list</h1>
 <ul>
-  <li *ngFor="let contact of contacts">{{contact.name}}</li>
+  <li *ngFor="let contact of contacts">
+    <!-- do some css to lake the card beautiful... Or use something to do it for us, like mat-card-->
+    <div class="contact-card">
+      <div>name : {{contact.name}}</div>
+      <div>email: {{contact.email}}</div>
+      <div>phone: {{beautifyPhone(contact.phone)}}</div>
+      <!-- this button is put like hell and is ugly, need to do it better-->
+      <button (click)="deleteContact(contact.name)">Delete Contact</button>
+      <!-- this one too-->
+      <button (click)="editContact(contact.name)">Edit Contact</button>
+    </div>
+    <p></p>
+  </li>
 </ul>

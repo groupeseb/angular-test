@@ -19,7 +19,7 @@ Could you please fix and finish it ?
 1. We'd like the menu links to be displayed on all pages and the `/` route to display the contacts list instead of an empty page
 2. We'd like the new contact form to control the input values :
    * Name is mandatory and must be between 5 and 50 characters long
-   * Email is mandatory and must match pattern `[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2}`
+   * Email is mandatory and must match pattern `[a-zA-Z0-9.\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2}`
    * Phone is not mandatory, but if provided it must contain only 12 digits numbers.
 3. Please change the list view to display contact cards showing name, email and phone instead of a raw names list
    * Phone numbers must be displayed in human-readable format by inserting spaces, e.g: 061234567890 => 06 12 34 56 78 90

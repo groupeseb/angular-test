@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ContactsListService} from '../../services/contacts-list.service';
+import { tap } from 'rxjs';
+import { ContactsListService } from '../../services/contacts-list.service';
 
 @Component({
   selector: 'app-list',
@@ -13,15 +14,19 @@ export class ListComponent implements OnInit {
   constructor(private readonly contactsService: ContactsListService) { }
 
   ngOnInit(): void {
-    this.contactsService.getList().subscribe(
-      (contacts: any[]) => {
-        for(const contact of contacts){
-          this.contactsService.getContactDetails(contact.id).subscribe(
-            contact => this.contacts.push(contact)
-          )
+    this.contactsService.getList()
+      .pipe(
+        tap(console.log)
+      )
+      .subscribe(
+        (contacts: any[]) => {
+          for (const contact of contacts) {
+            this.contactsService.getContactDetails(contact.id).subscribe(
+              contact => this.contacts.push(contact)
+            )
+          }
         }
-      }
-    );
+      );
   }
 
 }

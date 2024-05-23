@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NewContactComponent } from './components/new-contact/new-contact.component';
-import {FormsModule} from '@angular/forms';
-import { MenuComponent } from './components/menu/menu.component';
 import { ListComponent } from './components/list/list.component';
-import {HttpClientModule} from '@angular/common/http';
+import { MenuComponent } from './components/menu/menu.component';
+import { NewContactComponent } from './components/new-contact/new-contact.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NotFoundComponent,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
